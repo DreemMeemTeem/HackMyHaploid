@@ -1,0 +1,100 @@
+.aminoedit-pane {
+  width: 1200px;
+  height: 300px;
+  background-color: #e9e2cb;
+}
+
+.editor-dnaContainer, .editor-rnaContainer {
+  display: flex;
+  font-family: 'Courier', monospace;
+  float: left;
+}
+
+.editor-dnaContainer:before, .editor-rnaContainer:before {
+  font-family: 'Helvetica', sans-serif;
+  padding-top: 20px;
+  opacity: .3;
+}
+
+.editor-dnaContainer:before {
+  content: 'DNA';
+}
+
+.editor-rnaContainer:before {
+  content: 'RNA';
+}
+
+.editor-dnaNucleotide, .editor-rnaNucleotide {
+  flex: 0 1 auto;
+  font-size: 2rem;
+  border-style: solid;
+  border-radius: 10px;
+  margin: 6px 10px;
+  padding: 0px 2px;
+  z-index: 5;
+}
+
+.editor-dnaNucleotide {
+  background-color: #fcf4dc;
+  border-color: #fcf4dc;
+  color: #2196f3;
+}
+
+.editor-dnaNucleotide.mutable {
+  background-color: #bfe099;
+  border-color: #bfe099;
+}
+
+.editor-rnaNucleotide {
+  background-color: #fcf4dc;
+  border-color: #fcf4dc;
+  color: #f44336;
+}
+
+.nucleotideCycle {
+  font-size: 12px;
+  position: absolute;
+  margin-top: -32px;
+  margin-left: 25px;
+  color: #ababab;
+}
+
+.nucleotideCycle.down {
+  margin-top: -15px;
+}
+
+.nucleotideCycle.up:before {
+  content: '\2B06 \FE0E ';
+}
+
+.nucleotideCycle.down:before {
+  content: '\2B07 \FE0E ';
+}
+
+.editor-rnaAminoLabel {
+  position: absolute;
+  text-align: center;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 1.5rem;
+  background-color: #fff495;
+  border-color: #fff495;
+  border-style: solid;
+  border-width: 4px;
+  border-radius: 5px;
+  margin-top: 60px;
+  color: #ffffff;
+  z-index: 5;
+}
+
+.editor-rnaAminoBars {
+  position: absolute;
+  border-style: solid;
+  border-color: #fff495;
+  border-width: 10px;
+  border-radius: 10px;
+  border-top-style: none;
+  width: 90px;
+  height: 60px;
+  margin-top: 15px;
+  margin-left: -30px;
+}
