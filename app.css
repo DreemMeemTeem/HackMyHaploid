@@ -98,3 +98,14 @@
   margin-top: 15px;
   margin-left: -30px;
 }
+
+table{
+  margin: 0 auto;
+    display: block;
+}
+td{
+  border-radius: 2px;
+  text-align: center;
+  border: 2px solid black;
+  width:50%;
+}

@@ -1,0 +1,12 @@
+.monster {
+  width: 594px;
+  height: 608px;
+  margin: 2% auto;
+  background: url('https://files.slack.com/files-pri/T18UM75AS-F2M2UUQDC/cell2.png') left center;
+  animation: play 1.5s steps(3) infinite;
+}
+
+@keyframes play {
+    100% { background-position: -1800px; }
+}
+;
