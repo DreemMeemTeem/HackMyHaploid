@@ -37,13 +37,13 @@ CellAnimation = (function() {
     });
 
     self.cell = new createjs.Sprite(self.spriteSheet, 'healthy');
-    self.cell.x = 80;
+    self.cell.x = 450;
     self.cell.y = 22;
 
     self.virus = new createjs.Sprite(self.spriteSheet, 'virus');
-    self.virus.x = 1160;
+    self.virus.x = -100;
     self.virus.y = 300;
-    self.virus.rotation = 90
+    self.virus.rotation = -90
     self.virus.scaleX = .25;
     self.virus.scaleY = .25;
 
@@ -54,22 +54,25 @@ CellAnimation = (function() {
     createjs.Ticker.addEventListener('tick', self.stage);
   }
 
-  CellAnimation.prototype.changeState = function(state) {
+  CellAnimation.prototype.changeState = function(state, cb) {
     var self = this;
     
     self.launchVirus(function() {
       self.cell.gotoAndPlay(state);
+      if (cb) {
+        cb();
+      }
     });
   }
 
   CellAnimation.prototype.launchVirus = function(cb) {
     var self = this;
 
-    self.virus.x = 1160;
+    self.virus.x = 0;
 
     createjs.Tween.get(self.virus)
       .to({
-        x: 400
+        x: 700
       }, 1000)
       .call(cb || new Function());
   }
