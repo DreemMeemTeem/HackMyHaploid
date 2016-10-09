@@ -30,6 +30,13 @@ AminoEdit = (function() {
       .prop('id', 'RNAContainer')
     );
     self.rnaContainer = $('#RNAContainer');
+    
+    self.elem.append(
+      $('<div>')
+      .addClass('editor-aminoContainer')
+      .prop('id', 'aminoContainer')
+    );
+    self.aminoContainer = $('#aminoContainer');
 
     self.basePairs.map(function(nucleotide, index) {
       self.dnaContainer.append(
@@ -152,6 +159,7 @@ AminoEdit = (function() {
     }
 
     self.rnaContainer.empty();
+    self.aminoContainer.empty();
     self.currentRNASequence = sequence.map(function(nucleotide) {
       var rnaReplacements = {
         'A': 'U',
@@ -177,14 +185,14 @@ AminoEdit = (function() {
           .text(nucleotide)
           .appendTo(self.rnaContainer)
       });
-
-      self.rnaContainer.append(
+      console.log(nucleotideBoxes[0].position().left)
+      self.aminoContainer.append(
         $('<div>')
         .addClass('editor-rnaAminoLabel')
         .text(aminoAbbr.toUpperCase())
         .css('left', nucleotideBoxes[0].position().left + nucleotideBoxes[0].outerWidth(true) - 3)
       )
-      self.rnaContainer.append(
+      self.aminoContainer.append(
         $('<div>')
         .addClass('editor-rnaAminoBars')
         .css('left', nucleotideBoxes[0].position().left + nucleotideBoxes[0].outerWidth(true))

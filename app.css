@@ -41,6 +41,11 @@ body {
   font-family: 'Courier', monospace;
   float: left;
   padding-left: 20px;
+  position: absolute;
+}
+
+.editor-rnaContainer {
+  margin-top: 60px;
 }
 
 .editor-dnaContainer:before, .editor-rnaContainer:before {
@@ -55,6 +60,11 @@ body {
 
 .editor-rnaContainer:before {
   content: 'RNA';
+}
+
+.editor-aminoContainer {
+  position: absolute;
+  padding-top: 45px;
 }
 
 .editor-dnaNucleotide, .editor-rnaNucleotide {
