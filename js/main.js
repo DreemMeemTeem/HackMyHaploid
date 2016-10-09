@@ -8,6 +8,30 @@ var editor = new AminoEdit({
   events: {
     onAminoUpdate: function(sequence) {
       var mutableCodon = sequence[sequence.length - 1];
+      var imgP;
+      switch(mutableCodon){
+          case "UGG":
+            imgP="";
+            break;
+          case "AGG":
+            imgP="";
+            break;
+          case "CGG":
+            imgP="";
+            break;
+          case "GGG":
+            imgP="";
+            break;
+          case "UCG":
+            imgP="";
+            break;
+          case "UAG":
+            imgP="";
+            break;
+          case "UUG":
+            imgP="";
+            break;
+      }
       console.log(mutableCodon)
     }
   }
