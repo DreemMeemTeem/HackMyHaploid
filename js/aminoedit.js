@@ -1,9 +1,9 @@
-AminoEdit = function() {
+AminoEdit = (function() {
 
   var AminoEdit = function(opts) {
     var self = this;
     
-    self.elem = $(opts.element);
+    self.elem = opts.element
     if (typeof opts.basePairs === 'string') {
       self.basePairs = opts.basePairs.toUpperCase().split('')
     } else {
@@ -224,4 +224,4 @@ AminoEdit = function() {
   }
 
   return AminoEdit
-}()
+})()
