@@ -1,9 +1,9 @@
-AminoEdit = function() {
+AminoEdit = (function() {
 
   var AminoEdit = function(opts) {
     var self = this;
-    
-    self.elem = $(opts.element);
+
+    self.elem = opts.element
     if (typeof opts.basePairs === 'string') {
       self.basePairs = opts.basePairs.toUpperCase().split('')
     } else {
@@ -11,6 +11,7 @@ AminoEdit = function() {
     }
     self.mutableNucleotideIndicies = opts.mutableNucleotideIndicies;
     self.events = opts.events || {};
+    self.directions = opts.directions;
 
     self.currentDNASequence = self.basePairs;
     self.currentRNASequence = [];
@@ -48,7 +49,6 @@ AminoEdit = function() {
           .addClass('nucleotideCycle up')
           .data('nucleotideIndex', index)
           .click(function() {
-            console.log('up')
             var label = $('#editor-dnaNucleotideLabel' + $(this).data('nucleotideIndex'))
             var nucIndex = nucseq.indexOf(label.text());
             if (nucIndex === 0) {
@@ -161,9 +161,9 @@ AminoEdit = function() {
       }
       return rnaReplacements[nucleotide]
     });
-    
+
     self.onRNAUpdate(self.currentRNASequence);
-    
+
     self.currentAminoSequence = [];
 
     for (var i = 0; i < self.currentRNASequence.length; i += 3) {
@@ -189,39 +189,38 @@ AminoEdit = function() {
         .addClass('editor-rnaAminoBars')
         .css('left', nucleotideBoxes[0].position().left + nucleotideBoxes[0].outerWidth(true))
       )
-      
+
       self.currentAminoSequence.push(aminoAbbr.toUpperCase());
     };
-    
+
     self.onAminoUpdate(self.currentAminoSequence);
   }
 
   AminoEdit.prototype.onDNAUpdate = function(sequence) {
     var self = this;
 
-    console.log(sequence);
     self.drawRNA(sequence);
-    
+
     if (self.events.onDNAUpdate) {
       self.events.onDNAUpdate(sequence)
     }
   }
-  
+
   AminoEdit.prototype.onRNAUpdate = function(sequence) {
     var self = this;
-    
+
     if (self.events.onRNAUpdate) {
       self.events.onRNAUpdate(sequence)
     }
   }
-  
+
   AminoEdit.prototype.onAminoUpdate = function(sequence) {
     var self = this;
-    
+
     if (self.events.onAminoUpdate) {
       self.events.onAminoUpdate(sequence)
     }
   }
 
   return AminoEdit
-}()
+})()
