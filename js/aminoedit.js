@@ -14,6 +14,7 @@ AminoEdit = function() {
 
     self.currentDNASequence = self.basePairs;
     self.currentRNASequence = [];
+    self.currentAminoSequence = [];
 
     self.elem.append(
       $('<div>')
