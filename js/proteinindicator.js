@@ -57,11 +57,11 @@ ProteinIndicator = (function() {
       },
       'UUG': {
         position: [51, 225],
-        description: 'Leucine: must be obtained from diet, major component in "buffer" proteins.'
+        description: 'Leucine: must be obtained from diet, major component in "buffer" proteins'
       },
       'CUG': {
         position: [222, 202],
-        description: 'Leucine: must be obtained from diet, major component in "buffer" proteins.'
+        description: 'Leucine: must be obtained from diet, major component in "buffer" proteins'
       },
       'CGG': {
         position: [184, 247],
